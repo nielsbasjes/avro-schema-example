@@ -10,6 +10,10 @@ This project is intended to be an example project.
 1. This project is intended to show **A POSSIBLE WAY** of structuring a project that uses records serialized with Apache Avro in an effective way. There are many alternative ways of doing this.
 2. I created this mostly from scratch to provide an "as clean as possible" showcase of how to make this work. This project was created specifically as this example. **This code has NOT been used in production.**
 
+# If you build it: it will fail
+Yes, this code is in the (deliberate!) state of failing when you build it.
+I did this to show that in the Measurement.avdl adding a new field (Session) without a default value will fail the schema evolution check that is done during the build.
+
 # Usecases
 In general this can help in having schemas in a schemaless environment.
 
@@ -20,6 +24,7 @@ Most streaming transport systems (like Apache Kafka) only accept a byte array as
     By serializing the records with Avro you can now have independent rolling upgrades and
     canary releases of the producing and consuming systems.
     By using these ideas; these upgrades no longer incur any downtime.
+
 ## Databases
 Systems like [Apache HBase](https://hbase.apache.org/) and [Google BigTable](https://cloud.google.com/bigtable) are databases that do not have any kind of schema: All values are byte arrays.
 
