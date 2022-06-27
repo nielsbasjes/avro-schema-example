@@ -23,7 +23,7 @@ protocol WebData {
         string resource;
 
     /** What was the (HTTP) response code? (i.e. 200/404/503/...) */
-//        union { null, string } httpResponse = null;
+        union { null, string } httpResponse = null;
     }
 
 }
